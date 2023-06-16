@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<launch>
+        <arg name="device_name" default="/dev/input/js1"/>
+
+        <arg name="pub_topic_twist" default="/ds4/cmd_vel"/>
+        <arg name="max_linear_twist" default="0.5"/>
+        <arg name="max_angular_twist" default="0.2"/>
+
+  	<!-- JOY ROS NODE -->
+        <node respawn="true" pkg="joy" type="joy_node" name="ps4_joy">
+            <param name="dev" type="string" value="$(arg device_name)" />
+            <param name="deadzone" value="0.12" />
+ 	</node>
+
+	<!-- PS4 ROS NODE -->
+	<node pkg="ps4_ros" type="ps4_ros" name="ps4" output="screen">
+            <param name="scale_linear" value="$(arg max_linear_twist)"/>
+            <param name="scale_angular" value="$(arg max_angular_twist)"/>
+            <param name="pub_topic" value="$(arg pub_topic_twist)"/>
+	</node>
+
+</launch>
+
+
