@@ -25,3 +25,7 @@ Sony PlayStation 4 DualShock®4 node joy_msg to twist_msg
 
 * Display raw _ds4drv_ data
   * `$sudo jstest /dev/input/jsX`
+  
+
+# Reference
+- Adapted from [PS4-ros](https://github.com/solbach/ps4-ros)
