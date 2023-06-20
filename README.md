@@ -1,5 +1,5 @@
 # ps4_ros
-Sony PlayStation 4 DualShock®4 node joy_msg to twist_msg
+Sony PlayStation 4 DualShock®4 node joy_msg to twist_msg. The connection with Sony PlayStation 4 DualShock®4 is established using Bluetooth.
 
 # Installation
 1. Install __ds4dr__: `$sudo pip install ds4drv`
